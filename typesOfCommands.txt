@@ -1,0 +1,7 @@
+"Config" - "Конфиг"
+"Entertainment" - "Развлечения"
+"Games" - "Игры"
+"Information" - "Информация"
+"Miscellaneous" - "Разное"
+"Moderation" - "Модерация"
+"Music" - "Музыка"
