@@ -15,6 +15,16 @@ for (const file of commandFiles) {
 	client.commands.set(command.data.name, command);
 }
 
+fs.readdirSync('./slashCommands/').forEach(dirs => {
+  const commands = fs.readdirSync(`./slashCommands/${dirs}`).filter(files => files.endsWith('.js'));
+
+  for (const file of commands) {
+    const filePath = path.join(path.join(__dirname, `slashCommands/${dirs}`), file);
+    const command = require(filePath);
+    client.commands.set(command.data.name, command);
+  };
+});
+
 client.once('ready', () => {
 	console.log('Готова к труду и обороне!');
 });
