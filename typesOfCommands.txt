@@ -5,3 +5,4 @@
 "Miscellaneous" - "Разное"
 "Moderation" - "Модерация"
 "Music" - "Музыка"
+"Economy" - "Экономика"
