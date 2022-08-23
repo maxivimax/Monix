@@ -7,16 +7,17 @@ module.exports = {
     .setDescription('Играю песенки в вашем канале')
     .addStringOption(option => option.setName('song').setDescription('Что запустить?').setRequired(true)),
   async execute(interaction) {
+    await interaction.deferReply();
+
+    const channel = interaction.member.voice.channel;
     const song = interaction.options.getString('song');
 
-    const voiceChannel = interaction.member.voice.channel;
-
     music.play({
-        interaction: interaction,
-        channel: voiceChannel,
-        song: song
+      interaction: interaction,
+      channel: channel,
+      song: song
     });
 
-    await interaction.reply('Поставила в очередь ' + interaction.options.getString('song'));
+    await interaction.editReply('Поставила в очередь ' + interaction.options.getString('song'));
   },
 };
